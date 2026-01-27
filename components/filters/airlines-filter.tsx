@@ -287,7 +287,7 @@ export function AirlinesFilter({
 
             {/* Airlines */}
             {expandedAlliances.has(alliance) && (
-              <div className="space-y-1 pl-2 border-l-2 border-gray-200">
+              <div className="space-y-1 pl-2">
                 {allianceAirlines.map((airlineInfo) => {
                   const count = airlineCountMap.get(airlineInfo.code) || 0;
                   const isSelected = value.includes(airlineInfo.code);

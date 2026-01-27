@@ -350,7 +350,7 @@ export function FlightList({
   return (
     <div className={`space-y-4 ${className}`}>
       {/* Sort Controls */}
-      <div className="sticky top-20 bg-white z-20 py-4 border-b border-gray-200">
+      <div className="sticky top-4 bg-white z-20 p-4 border-b rounded-lg border-gray-200">
         <SortControls
           sortBy={sortBy}
           onSortChange={handleSortChange}

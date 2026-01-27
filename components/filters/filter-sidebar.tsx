@@ -87,7 +87,7 @@ function FilterSection({
         )}
       </button>
 
-      {isOpen && <div className="px-4 py-3 bg-gray-50">{children}</div>}
+      {isOpen && <div className="px-4 py-3 bg-white">{children}</div>}
     </div>
   );
 }
@@ -254,7 +254,7 @@ export function FilterSidebar({
           fixed lg:relative
           bottom-0 lg:bottom-auto
           left-0 right-0 lg:left-auto lg:right-auto
-          bg-white rounded-t-2xl lg:rounded-t-none
+          bg-white rounded-t-2xl rounded-b-none lg:rounded-t-lg lg:rounded-b-lg
           max-h-[90vh] lg:max-h-full
           overflow-y-auto
           w-full lg:w-64
@@ -269,7 +269,7 @@ export function FilterSidebar({
         <div className="lg:hidden h-1 w-12 bg-gray-300 rounded-full mx-auto mt-3 mb-4" />
 
         {/* Header */}
-        <div className="sticky top-0 bg-white border-b border-gray-200 p-4 lg:p-0">
+        <div className="sticky top-0 bg-white border-b border-gray-200 p-4">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-bold text-gray-900">Filters</h2>
             {hasActiveFilters && (
