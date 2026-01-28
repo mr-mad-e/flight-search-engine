@@ -167,7 +167,6 @@ export async function GET(request: NextRequest) {
 
     // Build search parameters
     const searchParams_ = buildSearchParams(validatedParams);
-    console.error("Flight search searchParams_:", searchParams_);
 
     // Initialize Amadeus client
     let client;
