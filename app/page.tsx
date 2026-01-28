@@ -14,7 +14,6 @@ import {
 import { FlightList } from "@/components/results/flight-list";
 import { FlightCardSkeleton } from "@/components/results/flight-card";
 import { PriceGraph } from "@/components/graph/price-graph";
-import { CompareBar, useCompareBar } from "@/components/results/compare-bar";
 
 // Hooks
 import { useFlightSearch } from "@/lib/hooks/use-flight-search";
@@ -135,9 +134,6 @@ export default function Home() {
   const [selectedFlightId, setSelectedFlightId] = useState<string | null>(null);
   const [showPriceGraph, setShowPriceGraph] = useState(true);
 
-  // Comparison state
-  const compare = useCompareBar(3);
-
   // Fetch flights
   const { flights, isLoading, error } = useFlightSearch(searchParams);
 
@@ -241,10 +237,9 @@ export default function Home() {
     }) => {
       setSearchParams(data);
       setSelectedFlightId(null);
-      compare.clearAll();
       setSidebarOpen(false);
     },
-    [compare],
+    [],
   );
 
   const handleFilterChange = useCallback((newFilters: FilterState) => {
@@ -427,15 +422,6 @@ export default function Home() {
           </div>
         </ErrorBoundary>
       </main>
-
-      {/* Sticky Comparison Bar */}
-      {compare.pinnedCount > 0 && (
-        <CompareBar
-          pinnedFlights={compare.pinnedFlights}
-          onUnpin={compare.removeFlight}
-          onCompare={compare.clearAll}
-        />
-      )}
     </div>
   );
 }
